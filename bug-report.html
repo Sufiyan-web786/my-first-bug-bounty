@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E - Bug Bounty Report</title>
+<style>
+body{background:#000;color:#0f0;font-family:monospace;padding:15px}
+.box{border:1px solid #0f0;padding:15px;margin:10px 0;background:#0a0a0a}
+h1{text-align:center}
+</style>
+</head>
+<body>
+<h1>🐛 E - Bug Bounty Report Template</h1>
+<p style="text-align:center">By Sufiyan Ansari - Kinjar</p>
+
+<div class="box">
+<b>1. Title:</b> [XSS / SQLi / Open Redirect]<br><br>
+<b>2. Domain:</b> example.com<br><br>
+<b>3. Severity:</b> High / Medium / Low<br><br>
+<b>4. Steps to Reproduce:</b><br>
+1. Go to https://example.com/search?q=<br>
+2. Paste payload: &lt;img src=x onerror=alert(1)&gt;<br>
+3. Alert appears - Bug Confirmed!<br><br>
+<b>5. Proof (Screenshot):</b> Attach image<br><br>
+<b>6. Impact:</b> Attacker can steal cookies / bypass login<br><br>
+<b>7. Fix:</b> Sanitize user input, use htmlspecialchars()<br>
+</div>
+
+<div class="box">
+<h3>My Labs Proof:</h3>
+A - <a href="xss-lab.html" style="color:#0ff">XSS Lab</a> - DONE<br>
+B - <a href="sub-finder.py" style="color:#0ff">Subdomain Tool</a> - DONE<br>
+C - <a href="login-bypass.html" style="color:#0ff">Login Bypass</a> - DONE<br>
+D - <a href="index.html" style="color:#0ff">Portfolio</a> - DONE<br>
+</div>
+
+<p style="text-align:center"><a href="index.html" style="color:#0f0">← Back to Home</a></p>
+</body>
+</html>
+
