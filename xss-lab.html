@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>XSS Lab - Sufiyan</title>
+<style>
+body{background:#0a0a0a;color:#00ff00;font-family:monospace;padding:20px;text-align:center}
+input{padding:12px;width:70%;background:#111;color:#0f0;border:1px solid #0f0}
+button{padding:12px;background:#0f0;color:#000;font-weight:bold;border:none;cursor:pointer;margin-top:10px}
+.box{border:1px solid #0f0;padding:20px;margin-top:20px}
+</style>
+</head>
+<body>
+<h1>🔍 Sufiyan's XSS Lab</h1>
+<p>Yaha kuch search karo, dekho kya hota hai!</p>
+
+<input id="search" placeholder="Jaise: hello ya <script>alert(1)</script>">
+<br>
+<button onclick="search()">Search Karo</button>
+
+<div class="box" id="result">Result yaha aayega...</div>
+
+<p style="margin-top:30px;font-size:12px">Try these payloads:<br>
+&lt;script&gt;alert('Hacked by Sufiyan')&lt;/script&gt;<br>
+&lt;img src=x onerror=alert(1)&gt;<br>
+&lt;svg onload=alert(document.domain)&gt;
+</p>
+
+<script>
+function search(){
+let q = document.getElementById('search').value;
+document.getElementById('result').innerHTML = "Tumne search kiya: " + q;
+// BUG YAHI HAI - innerHTML use kiya, isliye XSS hota hai!
+}
+</script>
+</body>
+</html>
