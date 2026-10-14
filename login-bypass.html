@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head><title>C - Login Bypass Lab</title>
+<style>
+body{background:black;color:#0f0;font-family:monospace;text-align:center;padding:20px}
+input,button{padding:10px;margin:5px;background:#111;color:#0f0;border:1px solid #0f0}
+</style>
+</head>
+<body>
+<h1>🔐 C - Login Bypass Lab</h1>
+<p>Username: admin <br> Password me ye daalo: <b>' OR '1'='1</b></p>
+<input id="u" placeholder="Username">
+<input id="p" placeholder="Password">
+<br><button onclick="hack()">Login Karo</button>
+<p id="msg"></p>
+<script>
+function hack(){
+ let u=document.getElementById('u').value;
+ let p=document.getElementById('p').value;
+ if(p.includes("' OR '1'='1") || p.includes("' or '1'='1")){
+   document.getElementById('msg').innerHTML="<h2 style='color:lime'>✅ ACCESS GRANTED! Hacked by Sufiyan from Kinjar!</h2>";
+ } else {
+   document.getElementById('msg').innerText="❌ Access Denied - Sahi payload try karo";
+ }
+}
+</script>
+<p><a href="index.html" style="color:#0f0">Back to Home</a></p>
+</body>
+</html>
