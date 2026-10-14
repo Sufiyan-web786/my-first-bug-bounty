@@ -1,0 +1,13 @@
+<h2>Test Your Site Security</h2>
+<input id="<img src=x onerror=alert('Tum Hack Ho Gaye!')>" placeholder="Apna naam likho">
+<button onclick="show()">Check</button>
+<p id="out"></p>
+
+<script>
+function show(){
+  // YE GALAT TARIKA HAI - Hacker iska fayda uthata hai
+  let n = document.getElementById('name').value;
+  document.getElementById('out').innerHTML = "Hello " + n; // XSS yahi se hota hai
+  // Agar koi <img src=x onerror=alert('Hacked')> likh dega to hack ho jayega!
+}
+</script>
